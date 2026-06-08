@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NAPOLCOM Reviewer 2018 Edition</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark">NR</div>
+          <div>
+            <p class="eyebrow">Online Reviewer</p>
+            <h1>NAPOLCOM 2018</h1>
+          </div>
+        </div>
+
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Topic, law, question...">
+        </label>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard">Dashboard</button>
+          <button class="nav-item" data-view="reader">Reviewer</button>
+          <button class="nav-item" data-view="practice">Practice</button>
+          <button class="nav-item" data-view="mock">Mock Exam</button>
+          <button class="nav-item" data-view="bookmarks">Bookmarks</button>
+        </nav>
+
+        <div class="subject-list" id="subjectList"></div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="icon-button menu-button" id="menuButton" aria-label="Open menu">
+            <span></span><span></span><span></span>
+          </button>
+          <div>
+            <p class="eyebrow" id="viewEyebrow">Dashboard</p>
+            <h2 id="viewTitle">Study Overview</h2>
+          </div>
+          <div class="top-actions">
+            <button class="ghost-button" id="increaseFont">A+</button>
+            <button class="ghost-button" id="decreaseFont">A-</button>
+            <button class="primary-button" id="startMockTop">Start Mock</button>
+          </div>
+        </header>
+
+        <section class="hero-band">
+          <div class="scanline" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <p class="eyebrow">Police exam preparation</p>
+            <h2>Command your review session.</h2>
+            <p>Track topics, practice with instant feedback, and simulate exam pressure in one focused workspace.</p>
+            <div class="hero-actions">
+              <button class="primary-button" id="heroRead">Open Reviewer</button>
+              <button class="ghost-button bright" id="heroPractice">Run Practice</button>
+            </div>
+          </div>
+          <div class="cover-art" aria-hidden="true">
+            <div class="cover-stripe"></div>
+            <div class="cover-title">NAPOLCOM<br>Reviewer</div>
+            <div class="cover-year">2018 Edition</div>
+            <div class="cover-lines">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="radar-ring"></div>
+          </div>
+        </section>
+
+        <section class="view active" id="dashboardView">
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Progress</span>
+              <strong id="progressStat">0%</strong>
+            </article>
+            <article class="stat-card">
+              <span>Bookmarks</span>
+              <strong id="bookmarkStat">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Best Mock</span>
+              <strong id="bestScoreStat">-</strong>
+            </article>
+            <article class="stat-card">
+              <span>Practice Accuracy</span>
+              <strong id="accuracyStat">-</strong>
+            </article>
+          </div>
+
+          <div class="section-head">
+            <h3>Subjects</h3>
+            <button class="ghost-button" id="continueButton">Continue</button>
+          </div>
+          <div class="subject-grid" id="subjectGrid"></div>
+        </section>
+
+        <section class="view" id="readerView">
+          <div class="reader-layout">
+            <div class="chapter-panel">
+              <div class="section-head compact">
+                <h3>Chapters</h3>
+              </div>
+              <div id="chapterList"></div>
+            </div>
+            <article class="reader" id="readerArticle"></article>
+          </div>
+        </section>
+
+        <section class="view" id="practiceView">
+          <div class="quiz-shell">
+            <div class="quiz-header">
+              <div>
+                <p class="eyebrow" id="practiceSubject">Practice</p>
+                <h3 id="practiceTitle">Question Review</h3>
+              </div>
+              <select id="practiceSelect" aria-label="Choose subject"></select>
+            </div>
+            <div class="question-box" id="practiceBox"></div>
+          </div>
+        </section>
+
+        <section class="view" id="mockView">
+          <div class="mock-panel">
+            <div class="mock-status">
+              <div>
+                <p class="eyebrow">Mock Exam</p>
+                <h3 id="mockTitle">10-question simulation</h3>
+              </div>
+              <div class="timer" id="timer">15:00</div>
+            </div>
+            <div id="mockBox"></div>
+          </div>
+        </section>
+
+        <section class="view" id="bookmarksView">
+          <div class="section-head">
+            <h3>Saved Topics</h3>
+            <button class="ghost-button" id="clearBookmarks">Clear</button>
+          </div>
+          <div id="bookmarkList" class="bookmark-list"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
